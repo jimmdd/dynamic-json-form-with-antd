@@ -1,0 +1,33 @@
+{
+  "name": "dynamic-json-form-with-antd",
+  "version": "1.0.0",
+  "main": "./pages/index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next build && next start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "export": "next build && next export"
+  },
+  "author": "Jinglun Ding",
+  "dependencies": {
+    "next": "latest",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "antd": "^3.20.7",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "less": "3.0.4",
+    "less-loader": "^5.0.0"
+  },
+  "license": "ISC"
+}
