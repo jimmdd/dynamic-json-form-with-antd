@@ -10,11 +10,12 @@
   },
   "author": "Jinglun Ding",
   "dependencies": {
+    "antd": "^3.20.7",
+    "isomorphic-unfetch": "^3.0.0",
+    "moment": "^2.24.0",
     "next": "latest",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "antd": "^3.20.7",
-    "moment": "^2.24.0"
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
     "@zeit/next-less": "^1.0.1",
