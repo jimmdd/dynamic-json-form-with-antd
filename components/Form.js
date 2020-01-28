@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input } from 'antd';
-import { FormItem } from './FormItem';
+import fieldMapping from '../functions/fieldMapping';
 
 export const DynamicForm = Form.create({ name: 'DynamicForm' })((props) => {
     // const [count, setCount] = useState(0);
@@ -15,35 +15,19 @@ export const DynamicForm = Form.create({ name: 'DynamicForm' })((props) => {
         //     sm: { span: 16 },
         // },
     };
-    // useEffect(() => {
-    //     function handleSubmit(form) {
-    //         console.log('test', form);
-    //     }
-    // })
-
-    // const sections = props.schema.sections;
-    // console.log('sec', sections);
-    const rules = [
-        {
-            type: 'email',
-            message: 'The input is not valid E-mail!',
-        },
-        {
-            required: true,
-            message: 'Please input your E-mail!',
-        },
-    ]
     return (
         <Form {...formItemLayout}>
-            <FormItem
-                form={props.form}
-                id="email-test"
-                type="email"
-                label="email"
-                rules={rules}
-            >
-                <Input></Input>
-            </FormItem>
+            {
+                props.fields.map(d =>
+                    <Form.Item key={d.key} label={d.label}>
+                        {getFieldDecorator(d.key, {
+                            initialValue: d.defaultValue,
+                            rules: d.rules
+                        })(fieldMapping(d))}
+                    </Form.Item>
+                )
+
+            }
         </Form>
     )
 });

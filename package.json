@@ -15,7 +15,8 @@
     "moment": "^2.24.0",
     "next": "latest",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "uuid": "^3.4.0"
   },
   "devDependencies": {
     "@zeit/next-less": "^1.0.1",

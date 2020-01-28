@@ -5,13 +5,15 @@ export const FormItem = (props) => {
     // type checking
     // assising number prefix
     // assising letter prefix
-
+    const { getFieldDecorator } = props.form;
+    const { label, key, rules } = props.data;
     return (
-        <Form.Item label={props.label}>
-            {props.form.getFieldDecorator(props.id, {
+
+        <Form.Item label={label}>
+            {getFieldDecorator(key, {
                 // initialValue: props.data.defaultValue,
-                rules: props.rules
-            })(props.children)}
+                rules: rules
+            })(fieldMapping(props.data))}
         </Form.Item>
     )
 }

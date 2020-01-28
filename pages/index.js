@@ -15,7 +15,7 @@ const Index = ({ schema }) => (
 
 Index.getInitialProps = async (ctx) => {
   console.log('context', ctx.asPath)
-  const response = await fetch('http://localhost:3000/api/schema')
+  const response = await fetch('http://localhost:3000/api/schema/job_app')
   const schema = await response.json();
   console.log('schema', schema)
   return { schema }
