@@ -5,6 +5,10 @@ import { InputNumber, Input, Checkbox, Radio, Icon } from 'antd';
  * @return {Component} Promise<Component> 
  */
 function fieldMapping(data) {
+    const addons = {
+        prefix: data.prefix ? <Icon type={data.prefix} style={data.styles.prefixStyle} /> : null,
+        suffix: data.suffix ? <Icon type={data.suffix} style={data.styles.suffixStyle} /> : null
+    }
     switch (data.type) {
         case 'number':
             return (
@@ -12,6 +16,7 @@ function fieldMapping(data) {
                     style={data.styles.style}
                     min={data.min}
                     max={data.max}
+                    {...addons}
                 // onChange={onChange}
                 // value={value}
                 />
@@ -21,8 +26,7 @@ function fieldMapping(data) {
                 <Input
                     placeholder={data.placeholder || data.label}
                     style={data.styles.style}
-                    prefix={data.prefix ? <Icon type={data.prefix} style={data.styles.prefixStyle} /> : null}
-                    suffix={data.suffix}
+                    {...addons}
 
                 />
             );
@@ -31,6 +35,7 @@ function fieldMapping(data) {
                 <Input.TextArea
                     style={data.styles.style}
                     rows={4}
+                    {...addons}
 
                 />
             );
